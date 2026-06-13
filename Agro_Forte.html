@@ -1,0 +1,198 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agro Forte</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f9f4;
+            color: #2e4a1b;
+        }
+        header {
+            background: #4caf50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background: #3a7d44;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #a2d149;
+        }
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            color: #3a7d44;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #4caf50;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .services {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 250px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            background: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+        /* Formulário contato */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        form button {
+            background: #3a7d44;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background: #2e5f2a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agro Forte</h1>
+        <p>Fortalecendo a agricultura para um futuro sustentável</p>
+    </header>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+    </nav>
+    <main>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" alt="Campo agrícola" />
+        </section>
+        <section id="sobre">
+            <h2>Sobre a Agro Forte</h2>
+            <p>
+                A Agro Forte é uma empresa dedicada a fornecer soluções inovadoras para o setor agrícola, promovendo produtividade, sustentabilidade e tecnologia para agricultores de todo o Brasil.
+            </p>
+        </section>
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Consultoria Agrícola</h3>
+                    <p>Orientação especializada para melhorar a produção e a gestão da sua propriedade rural.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fornecimento de Insumos</h3>
+                    <p>Produtos agrícolas de alta qualidade para garantir o melhor desempenho nas lavouras.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Tecnologia e Inovação</h3>
+                    <p>Implantação de tecnologias modernas para otimizar processos e aumentar a eficiência.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <form action="#" method="post" onsubmit="return enviarFormulario(event)">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Agro Forte - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+            alert('Obrigado pelo contato! Em breve retornaremos.');
+            // Aqui você pode adicionar lógica para enviar o formulário para servidor se desejar
+            event.target.reset();
+            return false;
+        }
+    </script>
+</body>
+</html>
